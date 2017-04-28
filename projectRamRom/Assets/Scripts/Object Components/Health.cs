@@ -17,8 +17,15 @@ public class Health : NetworkBehaviour {
 
 	bool isAlive;
 
+	// Use this for initialization
+	void Start()
+	{
+		UpdateUI(); // Ensures the UI Health Bar is correct upon instantiation
+	}
+		
 	public void TakeDamage(int amount)
 	{
+		// Function call works only on server
 		if (!isServer)
 			return;
 
@@ -43,7 +50,13 @@ public class Health : NetworkBehaviour {
 		}
 	}
 
-	void OnChangeHealth (float health)
+	// Called when health variable changes via network SyncVar
+	void OnChangeHealth(float health)
+	{
+		UpdateUI();
+	}
+
+	void UpdateUI()
 	{
 		RectTransform healthBarSize = UIHealthBarForeground.GetComponent<RectTransform>();
 		healthBarSize.sizeDelta = new Vector2(GetHealthPercentage(), healthBarSize.sizeDelta.y);
