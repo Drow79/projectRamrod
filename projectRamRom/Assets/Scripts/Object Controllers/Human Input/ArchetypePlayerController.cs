@@ -26,6 +26,10 @@ public class ArchetypePlayerController : NetworkBehaviour
 		{
 			CmdFire();
 		}
+		if (Input.GetKeyDown(KeyCode.Keypad1))
+		{
+			//CmdFire();
+		}
 	}
 
 	// This [Command] code is called on the Client …
