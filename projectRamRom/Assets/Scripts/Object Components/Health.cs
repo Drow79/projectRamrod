@@ -73,7 +73,7 @@ public class Health : NetworkBehaviour {
 		}
 	}
 
-	public float GetHealthPercentage()
+	float GetHealthPercentage()
 	{
 		return (health / maxHealth) * 100;
 	}

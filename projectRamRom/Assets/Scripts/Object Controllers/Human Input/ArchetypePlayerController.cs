@@ -4,8 +4,8 @@ using UnityEngine;
 
 using UnityEngine.Networking;
 
-public class ArchetypePlayerController : NetworkBehaviour
-{
+public class ArchetypePlayerController : NetworkBehaviour {
+	
 	public GameObject bulletPrefab;
 	public Transform bulletSpawn;
 
@@ -51,8 +51,8 @@ public class ArchetypePlayerController : NetworkBehaviour
 		// Spawn the bullet on the Clients
 		NetworkServer.Spawn(bullet);
 
-		// Destroy the bullet after 2 seconds
-		Destroy(bullet, 2.0f);
+		// Destroy the bullet after 3 seconds
+		Destroy(bullet, 3.0f);
 	}
 
 	/*
