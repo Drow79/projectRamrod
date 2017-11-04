@@ -38,7 +38,8 @@ public class Health : NetworkBehaviour {
 			{
 				RpcRespawn();
 				health = maxHealth;
-			}
+			    UpdateUI();
+            }
 			else if (deathAction == ObjectAction.Destroy)
 			{
 				Destroy(gameObject);
